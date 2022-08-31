@@ -4,5 +4,9 @@
   </div>
 </template>
 
-<script></script>
+<script>
+    export default{
+        name:'Conteudo'
+    }
+</script>
 <style></style>
