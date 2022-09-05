@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h1>Componente app</h1>
     <topo-padrao />
     <conteudo />
   </div>
@@ -18,6 +19,5 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
 </style>

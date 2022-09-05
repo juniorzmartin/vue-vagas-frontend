@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>Home</p>
+    <h1>Componente Home</h1>
   </div>
 </template>
 
@@ -9,4 +9,5 @@
         name:'Home'
     }
 </script>
-<style></style>
+<style scoped>
+</style>
