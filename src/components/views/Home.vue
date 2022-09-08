@@ -5,16 +5,30 @@
         <pesquisar-vaga></pesquisar-vaga>
       </div>
     </div>
+  <div class="row mt-5">
+    <div class="col-4">
+      <indicador></indicador>
+    </div>
+
+    <div class="col-4">
+      <indicador></indicador>
+    </div>
+
+    <div class="col-4">
+      <indicador></indicador>
+    </div>
+  </div>
   </div>
 </template>
 
 <script>
   import PesquisarVaga from '@/components/comuns/PesquisarVaga.vue'
-
+  import Indicador from '@/components/comuns/Indicador.vue'
     export default{
         name:'Home',
         components:{
-          PesquisarVaga
+          PesquisarVaga,
+          Indicador
         },
         created(){
           console.log("criado")

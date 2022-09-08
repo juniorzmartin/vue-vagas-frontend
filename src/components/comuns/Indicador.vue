@@ -1,0 +1,14 @@
+<template>
+
+    <div class="h-100 p-5 rounder-3 border bg-dark text-white">
+        <p>Vagas Abertas</p>
+        <h2>25</h2>
+    </div>
+   
+</template>
+
+<script>
+    export default{
+        name: 'Indicador'
+    }
+</script>
