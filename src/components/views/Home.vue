@@ -15,7 +15,7 @@
     </div>
 
     <div class="col-4">
-      <indicador titulo="Visitantes online" indicador="17" bg="bg-light" color="text-dark"></indicador>
+      <indicador titulo="Visitantes online" :indicador="usuarioOnline" bg="bg-light" color="text-dark"></indicador>
     </div>
   </div>
   </div>
@@ -30,21 +30,18 @@
           PesquisarVaga,
           Indicador
         },
+        data: () => ({
+          usuarioOnline : 0
+        }),
+        methods: {
+          getUsuarioOnline(){
+           this.usuarioOnline = Math.floor(Math.random() * 101)
+          }
+        },
+
         created(){
-          console.log("criado")
-        },
-        activated(){
-          console.log("Componente ativado")
-        },
-        deactivated(){
-          console.log("Componente desativado")
-        },
-        beforeUnmount(){
-          console.log("Antes de desmontar/destruir")
-        },
-        unmounted(){
-          console.log("Desmontado/destruido")
-        },
+          setInterval(this.getUsuarioOnline, 1000)
+        }
     }
 </script>
 <style scoped>
