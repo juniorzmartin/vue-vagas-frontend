@@ -71,6 +71,10 @@
         }),
         methods: {
           salvarVaga(){
+            let tempoDecorrido = Date.now()
+            let dataAtual = new Date(tempoDecorrido)
+
+
              let vagas = JSON.parse(localStorage.getItem('vagas'))
              
             if (!vagas) vagas = [] 
@@ -80,7 +84,8 @@
               descricao: this.descricao,
               salario: this.salario,
               modalidade: this.modalidade,
-              tipo: this.tipo
+              tipo: this.tipo,
+              publicacao: dataAtual.toISOString()
             })                  
             /*
               let vaga = {
