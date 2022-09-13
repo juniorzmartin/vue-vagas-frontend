@@ -73,10 +73,8 @@
           salvarVaga(){
             let tempoDecorrido = Date.now()
             let dataAtual = new Date(tempoDecorrido)
-
-
-             let vagas = JSON.parse(localStorage.getItem('vagas'))
-             
+            let vagas = JSON.parse(localStorage.getItem('vagas'))
+          
             if (!vagas) vagas = [] 
 
             vagas.push({
