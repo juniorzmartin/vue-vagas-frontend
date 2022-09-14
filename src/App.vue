@@ -2,8 +2,8 @@
   <div>
     <h1>Componente app</h1>
     <button @click="desmontarComponente()">Desmontar o componente conteudo</button>
-    <topo-padrao />
-    <conteudo v-if="visibilidade"></conteudo>
+    <topo-padrao @eventoCapturadoNoComponentePai="acao($event)" />
+    <conteudo v-if="visibilidade" ></conteudo>
   </div>
 </template>
 
@@ -23,6 +23,10 @@ export default {
   methods: {
     desmontarComponente(){
       this.visibilidade = false
+    },
+    acao(e){
+      console.log(e)
+      console.log(e.msg)
     }
   }
 }
