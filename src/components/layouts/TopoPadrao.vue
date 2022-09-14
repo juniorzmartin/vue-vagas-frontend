@@ -8,10 +8,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" href="#" @click="navegarPara()">Home</a>
+          <a class="nav-link" href="#" @click="funcaoCallBack('click Home', 200)">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" @click="navegarPara()">Publicas vaga</a>
+          <a class="nav-link" href="#" @click="funcaoCallBack('click Vagas', 300)">Publicas vaga</a>
         </li>
       </ul>
     </div>
@@ -21,18 +21,10 @@
 
 <script>
     export default {
-        name:'TopoPadrao',
-        methods: {
-          navegarPara(){
-            this.$emit(
-              'eventoCapturadoNoComponentePai',
-              (t1, t2) => {
-                console.log("Função de callback emitida pelo componente filho")
-                console.log("t1: ", t1 , " t2: ", t2)
-              }
-            )
-          }
-        }
+        props:{
+          funcaoCallBack: Function
+        },
+        name:'TopoPadrao'
     }
 </script>
 <style></style>
