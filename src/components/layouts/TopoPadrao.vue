@@ -26,7 +26,10 @@
           navegarPara(){
             this.$emit(
               'eventoCapturadoNoComponentePai',
-              {msg: 'Testando, oi para o componente pai'}
+              (t1, t2) => {
+                console.log("Função de callback emitida pelo componente filho")
+                console.log("t1: ", t1 , " t2: ", t2)
+              }
             )
           }
         }
