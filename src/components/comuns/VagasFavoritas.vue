@@ -31,7 +31,7 @@ export default {
         })
 
         this.emitter.on('desfavoritarVaga',(obj) =>{
-             let indiceArray = this.vagas.findIndex(item => item.valtitulo === obj.valtitulo); //O método Array.findIndex permite encontrar o índice do elemento que satisfaz uma certa condição
+             let indiceArray = this.vagas.findIndex(item => item.valtitulo === obj.valtitulo && item.valmodalidade === obj.valmodalidade && item.valsalario === obj.valsalario); //O método Array.findIndex permite encontrar o índice do elemento que satisfaz uma certa condição
              if(indiceArray !== -1) this.vagas.splice(indiceArray, 1) // splice remover um elemento à partir de um índice do array
         })      
     }
