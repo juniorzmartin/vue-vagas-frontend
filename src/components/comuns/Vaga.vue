@@ -10,9 +10,8 @@
               </div>
               <div>
                 <div class="form-check form-switch">
-                  <input class="form-check-input" type="checkbox">
+                  <input class="form-check-input" type="checkbox" v-model="favoritada">
                   <label class="form-fheck-label">Favoritar</label>
-                  <button class="btn btn-danger" @click="dispararEventoComMitt()">Teste</button>
                 </div>
               </div>
             </div>
@@ -35,6 +34,25 @@
 export default ({
     name: 'Vaga',
     //props:['titulo','descricao','salario','modalidade','tipo','publicacao']
+    data: () => ({
+      favoritada: false,
+
+    }),
+    watch: {
+      favoritada(valorNovo){
+            let obj = {
+            valtitulo : this.titulo,
+            valmodalidade : this.getModalidade,
+            valtipo : this.getTipo,
+            valsalario:this.salario
+          }
+        if(valorNovo){
+          this.emitter.emit('favoritarVaga',obj)
+        }else {
+          this.emitter.emit('desfavoritarVaga',obj)
+        }
+      }
+    },
     props: {
         titulo: {
           type: String,
@@ -90,9 +108,6 @@ export default ({
             return dataPublicacao.toLocaleDateString('pt-BR')
           }
         },methods: {
-          dispararEventoComMitt(){
-            this.emitter.emit('eventoGlobal1','Teste Captura Evento Parâmentro')
-          }
         }
 })
 </script>
