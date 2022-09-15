@@ -23,6 +23,6 @@ export default {
 
 <style scoped>
     .divVagasFavoritas {
-        position:absolute; z-index:1; top:10px; right:10px
+        position:absolute; z-index:1; top:70px; right:0px
     }
 </style>
