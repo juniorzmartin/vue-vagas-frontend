@@ -3,25 +3,10 @@
     <vagas-favoritas></vagas-favoritas>
     <topo-padrao @navegar="componente = $event" />
      <alerta v-if="exibirAlerta"> 
-
-        <h3>Teste 1: Slot Padrão</h3>
         <template v-slot:titulo>
           <h5>Título Alerta</h5>
-         </template>
-
-         <div>
-          <p><strong>Teste: Slot Padrão</strong></p>
-         </div>
-
-         <template v-slot:descricao>
-          <p>Descrição do alerta</p>
-         </template>
-
-         <ul>
-          <li>Teste 3: slot padrão</li>
-          <li>Teste 3: slot padrão</li>
-          <li>Teste 3: slot padrão</li>
-         </ul>
+        </template>
+        <p>Descrição do alerta</p>
      </alerta>
 
     <conteudo v-if="visibilidade" :conteudo="componente"></conteudo>
