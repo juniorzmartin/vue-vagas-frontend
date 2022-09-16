@@ -1,8 +1,15 @@
 <template>
   <div>
-    <alerta />
     <vagas-favoritas></vagas-favoritas>
     <topo-padrao @navegar="componente = $event" />
+     <alerta v-if="exibirAlerta"> 
+      <div class="alert alert-success" role="alert">
+        <h5>Título do alerta</h5>
+        <hr>
+        <p>Descrição do alerta</p>
+      </div>
+     </alerta>
+
     <conteudo v-if="visibilidade" :conteudo="componente"></conteudo>
   </div>
 </template>
@@ -23,8 +30,16 @@ export default {
   },
   data: () => ({
     visibilidade: true,
-    componente: 'Home'
-  })
+    componente: 'Home',
+    exibirAlerta: false
+  }),
+  mounted(){
+    this.emitter.on('alerta', () => {
+      this.exibirAlerta = true
+      setTimeout(() => this.exibirAlerta = false , 3500)
+      console.log('Apresentar a mensagem de alerta customizada')
+    })
+  }
 }
 </script>
 
