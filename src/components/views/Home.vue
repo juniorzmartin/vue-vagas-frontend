@@ -49,14 +49,17 @@
            this.usuarioOnline = Math.floor(Math.random() * 101)
           }
         },
-
         created(){
           setInterval(this.getUsuarioOnline, 1000)
         },
-
-        //mounted(){
           activated(){
           this.vagas = JSON.parse(localStorage.getItem('vagas'))
+        },
+        mounted() {
+          this.emitter.on('filtrarVagas', vaga =>{
+            const vagas = JSON.parse(localStorage.getItem('vagas'))
+            this.vagas = vagas.filter(reg =>  reg.titulo.toLowerCase().includes(vaga.titulo.toLowerCase()) ) // true ou false: O método filter cria um novo array com todos os elementos que passaram no teste implementado na função
+           })
         }
     }
 </script>
