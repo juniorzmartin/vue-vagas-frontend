@@ -97,18 +97,20 @@
             if( this.validaFormulario()){
               localStorage.setItem('vagas', JSON.stringify(vagas))
               this.emitter.emit('alerta', {
+              tipo: 'sucesso',
               titulo: `A vaga ${this.titulo} foi cadastrada com sucesso!`,
               descricao: 'Parabéns, a vaga foi cadastrada e poderá ser consultada por milhares de profissionais.'
             })
+            
+              this.resetaFormularioCadastroVaga()
+
             }else{
               this.emitter.emit('alerta', {
+              tipo: 'erro',
               titulo: 'Não foi possivel realizar o cadastro',
               descricao: 'Você esqueceu de preencher alguma informação . '
               })
             }
-
-            
-            this.resetaFormularioCadastroVaga()
             
           },
           resetaFormularioCadastroVaga(){
